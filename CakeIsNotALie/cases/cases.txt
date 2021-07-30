@@ -24,8 +24,8 @@ ABCABCZ : That one troublemaker, Pattern = ABC, slicing = 2 fair slice is ABC, t
 ZABCABC : Backstabbo, what if orders started late? needs a way to deal with it such as changing starting
 					pattern check
 
-BABABA : Backstabbo + Overflow, Pattern AB, need circular linkedlist to deal with it
-CABCZAB : Overflow, see Backstabbo+Overflow
+BCABCABCA : Backstabbo + Overflow, Pattern AB, need circular linkedlist to deal with it, total 3
+CABCZAB : Overflow + Backstabbo another, see Backstabbo+Overflow, total 2
 
 Some insights:
 1. Pattern can't be smaller than 1
