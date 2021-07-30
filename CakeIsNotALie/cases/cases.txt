@@ -10,7 +10,7 @@ AAAAAAAAAAAA : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA, count as 1
 
 - A (1 Char) : 1 way to cut it, straight into stomach
 - AA : 1 / 2? one can say that A is a pattern thus can be cut into 2
-- AB/ABC : 1 no patternt means no cutting hence, let them eat cake
+- AB/ABC : 1 no pattern means no cutting hence, let them eat cake
 - AAB : from readme there is "sequence" after searching for the term, it means 
 				"a particular order in which related events, movements, or things follow each other."
 				notice the plural, I guess if there is only one char A as sequence it's not really sequence
