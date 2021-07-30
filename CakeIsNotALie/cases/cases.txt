@@ -1,0 +1,34 @@
+This txt is made for considering any fail case and handling it as fitting as possible to problem domain
+
+ABCABCABCABC : Normal 1, Pattern ABC
+ABCCBAABCCBA : Normal 2, Pattern ABCCBA shows that longest pattern win (CBA / ABC ignored)
+AAAAAAAAAAAA : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA, count as 1
+
+"", A, AB, ABA (less than 4) : 
+- With empty cake I think it's fair to say only one way to cut it fairly, you can'than
+  this philosophy of 1 way of cutting is shared with combinatorial 0! = 1
+
+- A (1 Char) : 1 way to cut it, straight into stomach
+- AA : 1 / 2? one can say that A is a pattern thus can be cut into 2
+- AB/ABC : 1 no patternt means no cutting hence, let them eat cake
+- AAB : from readme there is "sequence" after searching for the term, it means 
+				"a particular order in which related events, movements, or things follow each other."
+				notice the plural, I guess if there is only one char A as sequence it's not really sequence
+				
+- Conclusion : char under 4 will be regarded as 1 way to cut it
+
+
+ABCABCZ : That one troublemaker, Pattern = ABC, slicing = 2 fair slice is ABC, throw away Z 
+					nobody likes him, he smells >:(
+					
+ZABCABC : Backstabbo, what if orders started late? needs a way to deal with it such as changing starting
+					pattern check
+
+BABABA : Backstabbo + Overflow, Pattern AB, need circular linkedlist to deal with it
+CABCZAB : Overflow, see Backstabbo+Overflow
+
+Some insights:
+1. Pattern can't be smaller than 1
+2. pattern can't be bigger than length cake/2
+3. Overflow cases will be dealt on low priority because of how complex is it and the possibility of 
+	 fix solution will be kind of resource intensive
