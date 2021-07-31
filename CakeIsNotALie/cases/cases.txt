@@ -32,3 +32,6 @@ Some insights:
 2. pattern can't be bigger than length cake/2
 3. Overflow cases will be dealt on low priority because of how complex is it and the possibility of 
 	 fix solution will be kind of resource intensive
+4. There is a problem with ABCABCABCABC and ABCCBAABCCBA at first I thought the longer pattern have higher priority 
+
+I think I went into this problem on the wrong foot
