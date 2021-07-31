@@ -29,9 +29,52 @@ CABCZAB : Overflow + Backstabbo another, see Backstabbo+Overflow, total 2
 
 Some insights:
 1. Pattern can't be smaller than 1
-2. pattern can't be bigger than length cake/2
+2. pattern can't be bigger than length half of string
 3. Overflow cases will be dealt on low priority because of how complex is it and the possibility of 
 	 fix solution will be kind of resource intensive
-4. There is a problem with ABCABCABCABC and ABCCBAABCCBA at first I thought the longer pattern have higher priority 
+4. There is a problem with ABCABCABCABC and ABCCBAABCCBA at first I thought the longer pattern have higher priority
+5. From point 4, smaller pattern wins
+6. After some thought a pattern should be longer than 1
+7. Example of point 7 ABACA, if pattern is 1 then there would be A : 3 which doesn't really make sense
 
-I think I went into this problem on the wrong foot
+
+I think I went into this problem on the wrong foot 
+let's leave some edge cases alone such as baby dict and homogenous 
+and focus on breaking down the problem and how to finish this problem
+
+solution: (considering we will save the overflow case for later)
+1. find the repeating characters
+2. count the repeating characters
+
+Example:
+
+ABCABCABCABC : ABC is repeating character (instead of ABCABC)
+output : 4
+
+in case of overflow:
+1. find the repeating characters
+2. find the index of the first repeating character (noted as i)
+3. append [0:i] to the end of string
+4. count the repeating characters
+
+Example :
+CABCABCABCAB : ABC is repeating character found in index 1
+CABCABCABCABC : C (index 0) is appended to the end of string
+output : 4
+
+general:
+pattern_found by default is 1
+
+Step 1 breakdown:
+1. starts from 2 pattern length to half_length_string
+2. take subtstrings from 0 to string_length - pattern_length
+3. see if any pattern match
+4. if match return pattern and index
+5. if not match return ("", -1)
+
+step 2:
+1. if nothing match return 1
+2. if something match start checking pattern from match_index + pattern length
+3. iterate +1
+4. if found new, add pattern_found += 1 add index by pattern_length
+5. continue till end of string
