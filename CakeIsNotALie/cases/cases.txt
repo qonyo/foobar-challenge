@@ -26,7 +26,7 @@ ZABCABC : Backstabbo, what if orders started late? needs a way to deal with it s
 
 BCABCABCA : Backstabbo + Overflow, Pattern AB, need circular linkedlist to deal with it, total 3
 CABCZAB : Overflow + Backstabbo another, see Backstabbo+Overflow, total 2
-
+SDFGHJKKUYFGVKCGWQE : No Pattern
 Some insights:
 1. Pattern can't be smaller than 1
 2. pattern can't be bigger than length half of string
