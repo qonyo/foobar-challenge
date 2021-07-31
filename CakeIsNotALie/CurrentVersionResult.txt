@@ -1,0 +1,14 @@
+Verifying solution...
+Test 1 passed!
+Test 2 passed!
+Test 3 failed  [Hidden]
+Test 4 failed  [Hidden]
+Test 5 failed  [Hidden]
+Test 6 passed! [Hidden]
+Test 7 passed! [Hidden]
+Test 8 failed  [Hidden]
+Test 9 failed  [Hidden]
+Test 10 passed! [Hidden]
+
+Failed, is it because of overflow or my logic is wrong?
+sliced it as equal without much waste, what does it mean?

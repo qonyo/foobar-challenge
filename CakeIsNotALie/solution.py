@@ -12,9 +12,11 @@ def solution(s):
         return 1
     pattern_found = 1
     pattern = find_pattern(s)
+    print(s)
     if pattern["index"] < 0:
         return pattern_found
     pattern_found = count_pattern(s,pattern)
+    print(pattern_found)
     return pattern_found
 
 def find_pattern(s):
