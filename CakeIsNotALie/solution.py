@@ -3,41 +3,23 @@ def data_iter(file = "testcases.txt"):
         cases = f.read()
         for case in cases.split("\n"):
             result = solution(case)
-            #print(case, result)
+            print(case, result)
         
 def solution(s):
-    if len(s) < 4:
+    #I read about builtin function being expensive so save this
+    length_string = len(s)
+    if len(set(s)) == 1:
+        return length_string
+    if length_string%2 == 1:
         return 1
-    if len(set(s)) ==1 :
-        return 1
-    pattern_found = 1
-    pattern = find_pattern(s)
-    print(s)
-    if pattern["index"] < 0:
-        return pattern_found
-    pattern_found = count_pattern(s,pattern)
-    print(pattern_found)
-    return pattern_found
-
-def find_pattern(s):
-    half_pattern = len(s)/2
-    pattern_length = 2
-    while(pattern_length<= half_pattern):
-        for index in range(0,len(s)-pattern_length):
-            pattern_test = s[index:index+pattern_length]
-            string_test = s.replace(pattern_test, "-"*pattern_length, 1)
-            pattern_index = string_test.find(pattern_test)
-            
-            if pattern_index > -1:
-                return {"pattern" : pattern_test, "index": pattern_index}
-            
-        pattern_length += 1
-    return {"pattern" : "", "index" : -1}
-
-def count_pattern(s, pattern):
-    pattern_found = 0
-    while s.find(pattern["pattern"]) > -1:
-        s = s.replace(pattern["pattern"], "-"*len(pattern["pattern"]), 1)
-        pattern_found+=1
-    return pattern_found
+    else:
+        new_string = s*2
+        index = new_string.find(s,1,-1)
+        if index == -1:
+            return 1
+        else :
+            length_pattern = index
+            pattern = s[:length_pattern]
+            return (length_string/length_pattern)
+        
 data_iter()

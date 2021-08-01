@@ -1,3 +1,16 @@
+Result 2
+Test 1 failed 
+Test 2 failed 
+Test 3 passed! [Hidden]
+Test 4 passed! [Hidden]
+Test 5 passed! [Hidden]
+Test 6 failed  [Hidden]
+Test 7 failed  [Hidden]
+Test 8 failed  [Hidden]
+Test 9 failed  [Hidden]
+Test 10 failed  [Hidden]
+
+=================================================================
 Verifying solution...
 Test 1 passed!
 Test 2 passed!

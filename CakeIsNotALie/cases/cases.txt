@@ -1,3 +1,80 @@
+Keywords in this problem:
+- given a non-empty string less than 200 characters in length describing the sequence of M&Ms
+- returns the "maximum number" of equal parts that can be cut "without leaving any leftovers"
+
+added constraint :
+- Let's forget about overflow, and assume that the string sequence doesn't have recursive property
+
+ABCABCABCX cut into three is not equal (ABC, ABC, ABCX)
+Nor does (ABC, ABC, ABC, X)
+
+so simply put odd sequence should return 1
+with exception
+AAAAA : cut into five (A,A,A,A,A) from maximum number
+
+so right now the easiest way to deal right now is:
+1. if all the same return len string
+2. if odd return 1
+
+let's test our hypothesis first by seeing if this approach results in any passing test case:
+Result 2
+Test 1 failed 
+Test 2 failed 
+Test 3 passed! [Hidden]
+Test 4 passed! [Hidden]
+Test 5 passed! [Hidden]
+Test 6 failed  [Hidden]
+Test 7 failed  [Hidden]
+Test 8 failed  [Hidden]
+Test 9 failed  [Hidden]
+Test 10 failed  [Hidden]
+
+seems promising
+
+now time to deal with the normal pattern lookup and pattern counting
+Observation:
+1. length pattern can't be more than length_string/2
+2. sequences always start with the same character
+3. pattern_length must perfectly divide string_length
+4. passing equal cake will always have the same repeating pattern over and over
+5. on point 4 even if the string is even numbered i.e "ABABXX" will result in can only be cut 1
+6. on point 2 and 4, to easily find the first repeating pattern what if we did the following:
+
+original string: ABCABC
+- BCABC Take the first index
+- BCABC+ABCABC add original string this way there will always be original string in this
+- BC|ABCABC|ABC we find the first starting index of repeating by looking the first index of original string
+     ^
+		 2
+- take string from index[0:2+1]
+
+on failure case : ABABXX
+- BABXX
+- BABXXABABXX
+- it's failed...
+
+what if last char is cutted off too so pattern not found?
+
+- BABXXABABX
+- return index -1
+return cut = 1?
+
+or in pseudocode
+
+new = original*2
+index = new.find(original, 1, -1)
+if index == -1:
+	return 1
+else :
+	pattern = original[:index+1]
+	return len(original /len(pattern)) #from Observation 3
+
+turs out I don't need to add index by 1 after testing
+
+=============================Ignore (most of) the thought process below================================
+
+
+
 This txt is made for considering any fail case and handling it as fitting as possible to problem domain
 
 ABCABCABCABC : Normal 1, Pattern ABC
