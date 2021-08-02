@@ -1,3 +1,5 @@
 brain fried, start again tomorrow XD
 
 for tomorrow, try checking the pattern, I think there is some kind of numerical pattern there
+
+I also have a feeling this will be a dynamic programming (self calling method) kind of thing
