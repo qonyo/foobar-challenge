@@ -1,0 +1,36 @@
+for salute to happen it needs > and < to be next to each other such as
+"-><-"
+
+which I believe this is very frustating to solve using naive approach:
+1. checking the string and see if >< is next to each other
+2. move > right and < left on the same string
+
+to make it easier I think it would be better to change the representation 
+such as it's like on the road where there is 2 lane
+
+lstring = "--<-"
+rstring = "->--"
+
+this makes moving left and right much more easier, we can even use bit shift
+and binary operation since each string only represent a person and not person:
+
+original :
+
+lstring = "--<-"
+rstring = "->--"
+
+new :
+lstring = "0010"
+rstring = "0100"
+
+now to make things even easier to operate, we can use bitwise & operation by 
+shifting one of the string as a headstart:
+
+init lstring = "0010"
+init rstring = "0010" #(shifted at headstart)&
+result&			 = "0010"
+
+and then I believe in this we can use sum? 
+or at least explode the string cast into int, and sum it?
+
+I rarely use binary representation, testing required
