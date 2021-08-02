@@ -1,3 +1,5 @@
+
+===================================VALID APPROACH==========================================
 for salute to happen it needs > and < to be next to each other such as
 "-><-"
 
@@ -34,3 +36,12 @@ and then I believe in this we can use sum?
 or at least explode the string cast into int, and sum it?
 
 I rarely use binary representation, testing required
+
+Testing done, current stoppage:
+1. if one of lstring or rstring == 0 stop (absolute stoppage)
+2. early stoppage if no one can meet anymore
+example point 2 :
+rstring = "0010"
+lstring = "0100" 
+
+revision, bitwise shifting only one instead of both, dumb me
