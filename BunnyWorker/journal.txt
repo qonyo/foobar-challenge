@@ -132,6 +132,9 @@ diff :
 because right is the similar to left but -1 again let's try
 (x+y-2)
 
+making :
+(x+y-1)*(x+y-2)/2 + x
+
 I don't really like this solution, I haven't tried it yet but I think to make things simpler 
 I can just chuck it into my program and send it to foobar
 
