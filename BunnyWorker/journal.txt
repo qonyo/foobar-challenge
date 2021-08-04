@@ -14,6 +14,8 @@ https://www.mathsisfun.com/numberpatterns.html
 if my logic below seems jumping a lot, I also put the following info into consideration:
 https://math.wonderhowto.com/how-to/find-equation-for-growth-pattern-375048/
 
+==============================================================================================
+
 now I need to plug in f(x,y) into this problem better
 
 let's just bruteforce everythin and see if I see any more pattern
@@ -57,3 +59,94 @@ x3 : (n^2+n+8)/2
 x4 : (n^2+n+16)/2
 
 I need more time for this one
+
+==============================================================================================
+Aight i'm back
+
+recap
+patterns (checked until n ~4)
+x : 1, y : n = (n*(n-1))/2 + 1
+x : n, y : 1 = (n*(n+1))/2 
+
+patterns (x2 / y2)
+x : 2 , y : n = (n*(n-1))/2 + 1) + (n+1) | (n*(n-1))/2) +2 + n
+x : n , y : 2 = (n*(n+1)))/2 + (n) | (n*(n+1))) + n
+
+patterns(x3/y3)
+x : 3 , y : n = (n*(n-1))/2 + 1) + (n+1) + (n+2) | (n*(n-1))/2) +4 + 2n | 
+x : n , y : 3 = (n*(n+1)))/2 + (n) + (n+1) | (n*(n+1)))/2 + 2n + 1
+
+it's clear there is a pattern that I feel like close to uncover
+
+patterns x2 and x3 play around ( I find some simplification from my paper notes)
+X2:
+= (n^2 - n)/2 + 2 +n
+= n^2 - n + 4 + 2n = n^2 + n + 4
+= (n * (n+1))/2 + 2
+
+X3:
+= (n^2 -n)/2 +4 + 2n
+= n^2-n+8+4n = n^2 +3n +8
+= (n+2)(n+1)+6/2 = ((n+2)(n+1))/2 + 6/2
+= ((n+2)(n+1))/2 + 3
+
+HOLD UP
+x1 =================================v
+= (n*(n-1))/2 +1 == (n+0)*(n-1)/2 + 1 <change constant as x
+x2 ===============================v
+= (n*(n+1))/2 +2 == (n+1)*(n + 0)/2 + 2
+x3 ====================================v
+= ((n+2)*(n+1))/2 +3 == (n+2)*(n+1)/2 +3
+
+there is also the pattern with (n + something) * (n+something)
+if i can input y in here somehow
+
+random thought
+f(1,2) = 2*1/2 +1 = 2
+f(2,2) = 3 * 2/2 + 2= 5
+f(2,1) = 2 * 1/2 +2 = 3
+
+(1 , 1 ) = 1 * 0
+(2 , 2 ) = 3 * 2
+(3 , 3 ) = 5 * 4
+x y same but different increment
+
+(x*y) (x-y) make sense?
+nope diff = 
+0 , 0
+1 , 2
+4 , 4
+
+lets start with left first with simple equation
+x+y
+
+diff :
++1 
++1
++1
+
+(x+y) always too big by 1, means we can change left as
+
+(x+y-1)
+
+because right is the similar to left but -1 again let's try
+(x+y-2)
+
+I don't really like this solution, I haven't tried it yet but I think to make things simpler 
+I can just chuck it into my program and send it to foobar
+
+I might be able to use inductive method for this pattern(?) I forgot which theory is it to check if sequence is correct
+
+actually let's learn it right now
+
+oh no it's only T(n) not T(n,m) in most resources
+
+I mean i should have do this induction thingies from the start
+nah let's just chuck this in haha the testing platform is fast (y)
+
+Note before verifying : 
+I really don't like this, from numberphile's video
+
+https://www.youtube.com/watch?v=pAMgUB51XZA
+
+I know some pattern will break it's seemingly normal graph and most of the pattern I found, I arrived there by checking 4-5 or so number
