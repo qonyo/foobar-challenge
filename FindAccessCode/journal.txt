@@ -1,0 +1,9 @@
+usually in a competitive programming there will be a problem about dynamic programming
+
+will this be the one?
+
+too tired to copas the problem and make whole workspace, but basically it's about finding 
+lucky triplet [x,y,z] where
+
+y%x = 0
+z%y = 0
