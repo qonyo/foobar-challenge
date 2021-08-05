@@ -7,3 +7,9 @@ lucky triplet [x,y,z] where
 
 y%x = 0
 z%y = 0
+
+right now I'm thinking of 2 approach
+
+1. brute forcing by iterating and checking
+2. using modulo inspired by sieve of eratosthenes (https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes) <= not really sure about this one, but I felt like it might help efficiency
+
