@@ -79,14 +79,16 @@ let's try breaking it down more
 (2,4,8) < 2,4 || (2,4) (4,8)
 (2,4,12)< 2,4 || (2,4) (4,8)
 (2,3,6)  <2,3 || (2,3) (3,6)
-(2,3,12) <2,3 || (2,3) (3,12)
 (3,6,12) (3)
-(2,5,10) (2)
 
 2 and 3 really comes in a lot which is in sync with sieve of eratosthenes, I don't yet find any use for it in this problem though. I need to keep it in it might have clues
 
 I'm kind of sleep deprivated right now haha
 
-it feels as if there is some kind of gateway, or linking in this problem, do I need to graph this problem? represent this problem as tree? I don't really think so, t
-he test cases (with one in population) is really polluting my thought process right now
+it feels as if there is some kind of gateway, or linking in this problem, do I need to graph this problem? represent this problem as tree? I don't really think so, 
+the test cases (with one in population) is really polluting my thought process right now
 my brain looking for easy pattern too much, but the gateway thing is still on the board though, graph and tree feels too out there
+
+my suspicion on some kind of linking / gateway problem is confirmed, I found a solution that include combination of 2 images and mention gateway, in it, I only read it very briefly not to clue myself too much
+
+I will hack at it with this clue in mind later
