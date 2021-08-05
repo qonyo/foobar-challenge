@@ -13,3 +13,40 @@ right now I'm thinking of 2 approach
 1. brute forcing by iterating and checking
 2. using modulo inspired by sieve of eratosthenes (https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes) <= not really sure about this one, but I felt like it might help efficiency
 
+I don't really know how to find any cool mathematic tricks or even dynamic programming
+I will try to at least be able to run correctly
+
+observation :
+1. list's members are not always unique (there will be a repeating member)
+2. list's members are not always in order (see point 1), but let's assume we don't need any list ordering
+3. list need at least 3 members, let's assume no problem have less than 3 members
+4. it's unknown if there will be huge "jump" in problem for "hacking" purposes, assume there will
+
+What I mean :
+[1,2,3,4,5,6]
+     ^
+in this scenario once looking first triplet member on 4, we can skip since it's impossible reducing 
+iteration by half (stop at 3)
+
+example that breaks this hacks:
+[1,2,3,4,5,15]
+         ^
+can't stop at 3
+				 
+I ran manual calculation in paper, this journal might be incomplete since it's easier to write in 
+pen and paper in a fluid form, sorry for any reader
+
+proposed alghoritm (it's assuming observation 2 assumption is true, break if problem not in order)
+1. make a list that holds "divisible" with len of n where all value is 0
+2. make triplet_count that holds triplet count start with 0
+2. start itering problem domain, item pointed in this iteration we will call divisor
+3. start itering problem domain, starting with the next item in after divisor's position, we will call dividend
+4. if dividend%divisor == 0, 
+5. iter divisible_by, each divisible div(C)2 (combination take 2)
+6. result of step 5 always added to triplet_count
+7. return
+
+^wrong, there is repetition in counting triplet process
+
+
+
