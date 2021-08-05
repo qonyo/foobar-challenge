@@ -8,4 +8,6 @@ def combination(item, take):
     combination = factorial(item)/(take*factorial(item-take))
     return combination
     
-print(combination(10,2))
+a = [3,2,1]
+a.sort()
+print(a)

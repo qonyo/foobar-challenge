@@ -46,7 +46,43 @@ proposed alghoritm (it's assuming observation 2 assumption is true, break if pro
 6. result of step 5 always added to triplet_count
 7. return
 
-^wrong, there is repetition in counting triplet process
+^wrong, there is repetition in counting triplet process, I'm sure this solution broke when there is jumping sequence, 
+or maybe because of order? one thing at a time, let's say it's because of order first
 
+no it's not
 
+I think the problem is when there are a lot of jumps, I think repetitive member can be problem too i. e.
 
+[1,2,2,4] = 2
+
+(1,2,4)
+(1,2,4)
+
+my current solution can deal with this, but not in some other cases, it might be time limit, or the algorithm is wrong (in my approximation this algo might fail on jumping sequences)
+writing this also make another solution in my mind goes moot which is making a bin for all triplet and set(triplet) it discarding repetitive triplet
+
+the problem is (1,2,4) (1,2,4) is valid, if there is repetitive number too in this case it's 2
+
+so we can say that appearance frequency holds an importance to solving this problem
+
+I also noticed that most of the time there is a lot of repeating "divisor", will thinking about it reveal more pattern?
+example
+[2,3,4,5,6,7,8,9,10,11,12]
+(2,4,8) < 2,4
+(2,4,12)< 2,4
+(2,3,6)  <2,3
+(2,3,12) <2,3
+(3,6,12)
+(2,5,10)
+
+let's try breaking it down more
+(2,4,8) < 2,4 || (2,4) (4,8)
+(2,4,12)< 2,4 || (2,4) (4,8)
+(2,3,6)  <2,3 || (2,3) (3,6)
+(2,3,12) <2,3 || (2,3) (3,12)
+(3,6,12) (3)
+(2,5,10) (2)
+
+2 and 3 really comes in a lot which is in sync with sieve of eratosthenes, I don't yet find any use for it in this problem though. I need to keep it in it might have clues
+
+I'm kind of sleep deprivated right now haha
