@@ -86,3 +86,7 @@ let's try breaking it down more
 2 and 3 really comes in a lot which is in sync with sieve of eratosthenes, I don't yet find any use for it in this problem though. I need to keep it in it might have clues
 
 I'm kind of sleep deprivated right now haha
+
+it feels as if there is some kind of gateway, or linking in this problem, do I need to graph this problem? represent this problem as tree? I don't really think so, t
+he test cases (with one in population) is really polluting my thought process right now
+my brain looking for easy pattern too much, but the gateway thing is still on the board though, graph and tree feels too out there
