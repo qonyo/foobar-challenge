@@ -229,3 +229,27 @@ proposed algorithm:
 2. find all member occurences
 3. find out div and mul count
 4. zigma div*mul if occ !=2 else (div*mul)-1
+
+
+something wrong with my solution
+I assume it might be this kind of case
+
+2,2,4,4,8
+
+(2,2)(2,4)(2,8)
+(4,4)(4,8)
+
+224
+228
+244
+248
+448
+nope worked correctly
+whoops
+
+8,2,4,2,4
+
+this case failed, I think I need to sort my list first
+
+
+
