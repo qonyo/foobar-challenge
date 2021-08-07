@@ -92,3 +92,140 @@ my brain looking for easy pattern too much, but the gateway thing is still on th
 my suspicion on some kind of linking / gateway problem is confirmed, I found a solution that include combination of 2 images and mention gateway, in it, I only read it very briefly not to clue myself too much
 
 I will hack at it with this clue in mind later
+
+============================================================================================================
+
+I have a would be solution which is :
+
+1. count all member occurence
+2. make division chain i. e. 
+chains:
+(1,2,4,8) : triplets => (1,2,4) (1,4,8) (1,2,4) C(C1)3
+(1,2,6) : triplets 1
+
+then check if there are more than one occurence in any of the triplets (1,2,2,4)
+
+wait wait hold up, did I misread the test cases? 
+111 counted as 1 not three, meaning that occurences is not counted? as long as it's a chain? or is it series sensitive?
+but it will be a problem for (1,1,1) if use set first
+
+I'm getting close to answer
+
+I can brute force it 
+
+if len set(list) < 3  or len(list) < 3:
+	return 0
+	
+I really hate how beautiful the given testcases is
+
+what happens if [1,2,1,1]
+is it 1,2,1 and 111 only? I think so yeah, so I guess using set on triplets is available
+
+can we use C(list)3 then set then check if a member is lucky triples?
+
+it will explode too much though like
+1,2,1,1
+
+121 111 121 211
+
+^wrong
+1,1,2 is still available, 1 became gateway number I'm guessing what isn't needed is the duplicate pattern, not member occurences
+noted : 1,1,2,1 the amount of 1 is important, but not the location so (index,value) ((0,1), (1,2), (2,1))  = ((0,1),(1,2),(3,1)) (because on 111 case 111 counted once)
+
+I think I will need to graph this problem and try hacking at it one at a time
+
+The length of l is between 2 (I guess we can agree if l is less than or equal 2 return 0)
+======================================After graph solution====================================================
+
+After drawing the problem we can see that gateway is important seen in the node graph relation (x,y)
+where y%x == 0 
+
+case 1,2,4,8
+(1,2)(1,4)(1,8)
+(2,4)(2,8)
+(4,8)
+
+draw nodes and maps by yourself, it's very illustrative of the problem in example triplet 1,2,4 1,2,8 will show you that it adds 2 triplet
+
+with the following relation num_div * num_mul (unique, divided by 2 only counted once no matter how many occurences of 2 in the membership) in case of gateway 2 1*2 = 8 so in summary
+
+n div mul
+1  0   3
+2  1   2
+4  2   1
+8  3   0
+
+where lucky triplets count are 0*3 + 1*2 + 2*1 + 3*0 = 4 (at first I thought it was 1*2*2*1 where only gateway included, next case proves me wrong and gave me the sum/ zigma instead of selective multiplying)
+
+this solution broke down when we introduce reoccurence
+
+case 1,1,2,4,8
+
+relations:
+(1,1) (1,2) (1,4) (1,8)
+(2,4) (2,8)
+(4,8)
+
+n div mul
+1  1   4
+2  1   2
+4  2   1
+8  3   0
+
+manual count shows
+112
+114
+118
+124
+128
+148
+248
+
+trips = 7
+
+lucky trips = (1*4 + 1*2 + 2*1 + 3*0) = 8
+
+this is because in n = 1 1*4 assumes that 1 is available on the right side of the graph (both divisor and multiplier)
+this is easily solved with having flag that say hey if occurences is equal 2 please substract 1 from this multiplication!
+occurences of character more than 3 is not important because 3,3,3,3 will only have (3,3,3) as lucky trips
+
+final case 
+1,1,2,2,2,2,4,5,6,8
+
+(1,1)(1,2)(1,4)(1,5)(1,6)(1,8)
+(2,2)(2,4)(2,6)(2,8)
+(4,8)
+
+
+manual = 15
+112
+114
+115
+116
+118
+122
+124
+126
+128
+148
+222
+224
+226
+228
+248
+
+n div mul occ
+1  1   6   2
+2  2   4   4
+4  2   1   1
+5  1	 0	 1
+6	 2   0   1
+8  3   0   1
+
+(1*6) - 1 + (2*4) + (2*1) = 15 	YESSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+
+proposed algorithm:
+1. make unique combination take 2 from all lists member
+2. find all member occurences
+3. find out div and mul count
+4. zigma div*mul if occ !=2 else (div*mul)-1
