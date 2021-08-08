@@ -2,24 +2,19 @@ from itertools import combinations
 from collections import Counter
 
 def solution(l):
-    if len(l) <= 2:
-        return 0
-    
-    div_check = list(set(comb for comb in combinations(sorted(l),2)))
-    unique_count = dict(Counter(l))
-    divisors_count = dict.fromkeys(unique_count.keys(), 0)
-    multipliers_count =  dict.fromkeys(unique_count.keys(), 0)
+    unique_count = Counter(l)
+    divisors_count = Counter()
+    multipliers_count =  Counter()
     triples_total = 0
-    for x,y in div_check:
+    for x,y in combinations(sorted(unique_count),2):
         if y % x == 0:
             divisors_count[y] += 1
             multipliers_count[x] += 1
-    
-    for member in unique_count:
-        if unique_count[member] == 2:
-            triples_total += ((divisors_count[member]*multipliers_count[member]) - 1)
-            continue
-        triples_total += (divisors_count[member]*multipliers_count[member])
+    for x,n in unique_count.items():
+        triples_total += divisors_count[x]*multipliers_count[x]
+        if n >= 2:
+            triples_total += divisors_count[x] + multipliers_count[x]
+            if unique_count[x] >=3 :
+                triples_total += 1
     return triples_total
-    
-print(solution([8,2,4,2,4]))
+print(solution([1,1,1]))
