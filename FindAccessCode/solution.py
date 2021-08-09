@@ -17,4 +17,16 @@ def solution(l):
             if unique_count[x] >=3 :
                 triples_total += 1
     return triples_total
-print(solution([1,1,1]))
+print(solution([1,2,2,2,3,3,3,4,4,4,5,5,6]))
+
+def solutionz(l):
+    c = [0] * len(l)
+    count = 0
+    for i in range(0,len(l)):
+        j=0
+        for j in range(0, i):
+            if l[i] % l[j] == 0:
+                c[i] = c[i] + 1
+                count = count + c[j]
+    return count
+print(solutionz([1,2,2,2,3,3,3,4,4,4,5,5,6]))

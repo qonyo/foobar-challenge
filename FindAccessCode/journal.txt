@@ -381,3 +381,36 @@ if  > 3 tot + 1
 it doesn't make sense, it's still wrong
 I don't find test cases that fails
 this is weird
+
+I gave up and saw a solution online that DOESN'T MAKE SENSE LITERALLY
+I even tested it with my current pipeline and the result is night and day
+
+for LOL I tried using the solution to verify the google foobar problem and with such nonsense solution it must... it passed...
+
+IT PASSED WHAT?
+
+okay so because I say I failed this one let's try to break this solution down and see what is different
+
+or maybe, what is this google problem about
+
+case [1,2,2,2,3,3,3,4,4,4,5,5,6]
+
+my pipe = 14
+ans = 52
+
+I have a feeling that the answer that google is looking for is that 1,2,4 in this case is counted multiple time
+
+so 1,2,4 there is 9 combination
+1,2,6 there is 3 combination
+1,3,6 there is 3 combination
+1,2,2 there is 3 combination
+1,3,3 there is 3 combination
+1,4,4 3 combination
+1,5,5 1 combination
+2,2,4 9
+3,3,6 3
+3,3,3 1
+2,2,2 1
+4,4,4 1
+
+wow it's not even close to 52... I don't know anymore I will skip this solution and revisit later, my goal playing this game is to learn not to be frustrated on a problem I don't understand yet, let's move on
