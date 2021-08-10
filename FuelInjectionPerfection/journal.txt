@@ -1,0 +1,58 @@
+This problem reminds me of 3n+1 problem see here : https://en.wikipedia.org/wiki/Collatz_conjecture
+
+I believe the key to this problem is as follows:
+1. look for the fastest way to the smallest 2^n number
+2. because of 309 digits rule we need a fast computation method
+
+Some observation :
+the bigger we goes into the nitty gritty of hard number crunching I think it's good to write some observation
+1. the higher we go the less 2^n number there is
+2. I think that finding the fastest way to 2^n is key because each step will result in x/2 closer to 1
+3. which means we might need to check modulo/ is it even or not
+4. there might also be pattern of some special odd number having to be +1 or -1 (transform into even) which will result in the fastest way to 1
+5. Why I think there is pattern? it's a competitive programming stuff, you are always expected to fine some interesting things here
+
+I also think we might be able to use some dynamic programmin in this problem
+
+let's try working with some test cases I think I will write some samples with paper to make it easier to jiggle some number around
+so see you later.
+
+after working for 10 samples I found out that the best way for an even number is to divide by 2 right away:
+
+2 : 2, 1 		|| :2
+3 : 3, 2, 1 || -1 
+4 : 4, 2 , 1 ||:2
+5 : 5, 4, 2, 1 || -1
+6 : 6, 3, 2, 1 || :2
+7 : 7, 8, 4, 2, 1 || 7, 6, 3, 2, 1 <= this case is flexible, that's why I wrote both so that I can find pattern faster || +- 1
+8 : 8, 4, 2, 1 || :2
+9 : 9, 8, 4, 2, 1 || :2
+10 : 5,4,2,1 || :2
+1 : 1
+
+thus far I can't find a case where +1 at first step is advantageous instead of 7, say let's try it out to bigger number and 15 from readme
+
+Expanded :
+2 : 2, 1 		|| :2
+3 : 3, 2, 1 || -1 
+4 : 4, 2 , 1 ||:2
+5 : 5, 4, 2, 1 || -1
+6 : 6, 3, 2, 1 || :2
+7 : 7, 8, 4, 2, 1 || 7, 6, 3, 2, 1 <= this case is flexible, that's why I wrote both so that I can find pattern faster || +- 1
+8 : 8, 4, 2, 1 || :2
+9 : 9, 8, 4, 2, 1 || -1
+10 : 5,4,2,1 || :2
+11 : 11, 12, 6, 3, 2, 1 || 11, 10, 5, 4, 2, 1 || +- 1
+12 : 12, 6, 3, 2, 1 || :2
+13 : 13, 12, 6, 3, 2, 1 || -1
+14 : 14, 7, 6, 3, 2, 1 || :2
+15 : 15, 16, 8, 4, 2, 1 || 15, 14, 7, 6, 3, 2, 1 + 1 < must +, pattern break
+16 : 16, 8, 4, 2, 1 || :2
+17 : 17, 16, 8, 4, 2, 1 || 17, 18, 9, 8, 4, 2, 1 || -1
+18 : 18, 9, 8, 4, 2, 1 || :2
+19 : 19, 18, 9, 8, 4, 2, 1 || 20, 10, 5, 4, 2, 1 || +- 1
+20 : 20, 10, 5, 4, 2, 1 || :2
+
+is every 5*3 multiplier always result in +1 first? since 5 or 3 multiplier unique doesn't have this problem
+one thing for almost sure even is always divided by 2
+
