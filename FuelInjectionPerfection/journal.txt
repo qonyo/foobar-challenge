@@ -133,3 +133,7 @@ or maybe float
 https://stackoverflow.com/questions/1835787/what-is-the-range-of-values-a-float-can-have-in-python/1839009
 
 but I don't think float computation will result in int, let's try it out first
+
+https://stackoverflow.com/questions/20393373/performance-wise-how-fast-are-bitwise-operators-vs-normal-modulus
+
+it's possible to use bitwise operation for better performance, but I think the conversion and some logic might change if we implement bitwise (binary) operation fully, let's create a branch for this
