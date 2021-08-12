@@ -1,4 +1,5 @@
 def solution(n):
+    #TODO try reading and implementing bignum python
     n = int(n)
     count = 0
     while n != 1:

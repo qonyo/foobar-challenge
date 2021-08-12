@@ -123,3 +123,7 @@ Test 10 failed  [Hidden]
 
 it might have to do with variable typing and performance issue this solution should works in all cases, but I think I need to dig deeper into optimizing arithmetic function
 because this program require big number (300++ digits) to be able to be processed in an acceptable timeframe
+
+https://stackoverflow.com/questions/538551/handling-very-large-numbers-in-python
+
+use bignum
