@@ -106,3 +106,5 @@ def solution(num):
 		return 1+solution(num+1)
 	else:
 		return 1+solution(num-1)
+		
+my solution worked locally, but it failed all of the test cases which is weird
