@@ -1,4 +1,5 @@
 def solution(n):
+    n = int(n)
     count = 0
     while n != 1:
         if n%2==0:

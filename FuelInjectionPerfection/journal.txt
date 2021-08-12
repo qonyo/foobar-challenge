@@ -107,4 +107,19 @@ def solution(num):
 	else:
 		return 1+solution(num-1)
 		
-my solution worked locally, but it failed all of the test cases which is weird
+current test cases :
+foobar:~/fuel-injection-perfection faizqornijo$ verify solution.py 
+Verifying solution...
+Test 1 passed!
+Test 2 passed!
+Test 3 failed  [Hidden]
+Test 4 failed  [Hidden]
+Test 5 failed  [Hidden]
+Test 6 failed  [Hidden]
+Test 7 failed  [Hidden]
+Test 8 failed  [Hidden]
+Test 9 passed! [Hidden]
+Test 10 failed  [Hidden]
+
+it might have to do with variable typing and performance issue this solution should works in all cases, but I think I need to dig deeper into optimizing arithmetic function
+because this program require big number (300++ digits) to be able to be processed in an acceptable timeframe
