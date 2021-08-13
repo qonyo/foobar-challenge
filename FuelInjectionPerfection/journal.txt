@@ -201,7 +201,7 @@ it seems that even in binary representation we can see a pattern of +8 (4th from
 it seems my algorithm is wrong... I need counter example though, that there will be n&7 ==7 != +1, or n&7 is too slow?
 
 must +:
-15, 23 ,31, 39, 47
+15, 23 ,31, 39, 47 <= I still don't understand why this solution fails
 diff 8, 8, 8, 8, < we found a little bit of pattern here (although 7 is also technically can be + 1)
 
 must + or might use +:
@@ -209,9 +209,11 @@ must + or might use +:
  4  4  4  2  2  6  2  6  2  4  2  2
  
 must -:
-9, 13, 17, 21, 25
+9, 13, 17, 21, 25  <= if we include 5 still works, but with 3 it broke, we can make execption for three maybe
   4   4   4   4
 	n%4 == 1 use -? execpt 3? 
 	
 might / must -:
-3 5 7 9 11 
+3 5 7 9 11 15
+ 2 2 2 2  4
+
