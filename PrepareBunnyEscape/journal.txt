@@ -1,0 +1,19 @@
+I think we could map the map as a graph and solve the fastest path no matter the wall, then if there is only one wall it's solved
+it's super naive and will fail though let's start like the usual and finish this manually
+
+[
+[0, 1, 1, 0], 
+[0, 0, 0, 1], 
+[1, 1, 0, 0], 
+[1, 1, 1, 0]
+]
+
+[
+[0, 0, 0, 0, 0, 0], 
+[1, 1, 1, 1, 1, 0], 
+[0, 0, 0, 0, 0, 0], 
+[0, 1, 1, 1, 1, 1], 
+[0, 1, 1, 1, 1, 1], 
+[0, 0, 0, 0, 0, 0]
+]
+
