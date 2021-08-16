@@ -2,22 +2,61 @@ I think we could map the map as a graph and solve the fastest path no matter the
 it's super naive and will fail though let's start like the usual and finish this manually
 
 [
-[0, 1, 1, 0], 
-[0, 0, 0, 1], 
-[1, 1, 0, 0], 
+[0, 1, 1, 0],
+[0, 0, 0, 1],
+[1, 1, 0, 0],
 [1, 1, 1, 0]
-]
+] = 7
 
 [
-[0, 0, 0, 0, 0, 0], 
-[1, 1, 1, 1, 1, 0], 
-[0, 0, 0, 0, 0, 0], 
-[0, 1, 1, 1, 1, 1], 
-[0, 1, 1, 1, 1, 1], 
+[0, 0, 0, 0, 0, 0],
+[1, 1, 1, 1, 1, 0],
+[0, 0, 0, 0, 0, 0],
+[0, 1, 1, 1, 1, 1],
+[0, 1, 1, 1, 1, 1],
 [0, 0, 0, 0, 0, 0]
-]
+] = 11
 
-I think using a well known path traversal algorithm with modified part such as, 
+[
+[0, 1, 0, 0, 0, 0],
+[1, 1, 1, 1, 1, 0],
+[1, 0, 0, 0, 0, 0],
+[0, 0, 1, 1, 1, 1],
+[0, 1, 1, 1, 1, 1],
+[0, 0, 0, 0, 0, 0]
+] = 21
+
+[
+[0, 1, 1, 0],
+[0, 0, 0, 1],
+[1, 1, 1, 0],
+[1, 1, 1, 0]
+] = 7
+
+[
+[0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+[1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+[1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+[0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1],
+[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+] = 39
+
+I think using a well known path traversal algorithm with modified part such as,
 each node traversal is always given one time wall removal => return distance and or it's success will be easier for this problem to implement
 
 in example in problem number 2
@@ -25,3 +64,5 @@ in example in problem number 2
 crawl right and bottom, oh no bottom is wall, break it, now bottom crawler don't have wall break anymore and continue traversing to finish
 
 implementing it is different story though, I think I need to implement simple path traversal and distance count first
+
+solution failed on hidden test cases, wrong algorithm or performance issue?
