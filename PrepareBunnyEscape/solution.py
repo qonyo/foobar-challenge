@@ -17,8 +17,14 @@ def neighbours_lookup(row_now, col_now, pax_now):
     
         if row_next < 0 or col_next < 0 or row_next >= HEIGHT or col_next >= WIDTH: continue
         if VISITED[row_next][col_next]: continue
-        if GRID[row_next][col_next] == 1 : continue
-        
+        if GRID[row_next][col_next] == 1 and not(pax_now):continue
+        if GRID[row_next][col_next] == 1 and pax_now:
+            ROW_QUE.put(row_next)
+            COL_QUE.put(col_next)
+            PICKAXE_QUE.put(False)
+            VISITED[row_next][col_next] += 1
+            NODES_NEXT_LAYER += 1
+            continue
         ROW_QUE.put(row_next)
         COL_QUE.put(col_next)
         PICKAXE_QUE.put(pax_now)
