@@ -66,3 +66,13 @@ crawl right and bottom, oh no bottom is wall, break it, now bottom crawler don't
 implementing it is different story though, I think I need to implement simple path traversal and distance count first
 
 solution failed on hidden test cases, wrong algorithm or performance issue?
+Performance Issue confirmed
+
+===============================================================================================================================
+
+make new branch for breadth or depth first search with modification
+
+for efficiency let's use this as a base
+
+https://www.geeksforgeeks.org/breadth-first-traversal-bfs-on-a-2d-array/
+https://www.youtube.com/watch?v=KiCBXu4P-2Y
