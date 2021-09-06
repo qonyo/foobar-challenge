@@ -10,7 +10,7 @@ COL_QUE = queue.Queue()
 PICKAXE_QUE = queue.Queue()
 NODES_NEXT_LAYER = 0
 def neighbours_lookup(row_now, col_now, pax_now):
-    global NODES_NEXT_LAYER, ROW_QUE, COL_QUE, PICKAXE_QUE, VISITED
+    global NODES_NEXT_LAYER, ROW_QUE, COL_QUE, PICKAXE_QUE, VISITED, GRID
     for i in range(4):
         row_next = row_now + D_ROW[i]
         col_next = col_now + D_COL[i]
@@ -32,7 +32,7 @@ def neighbours_lookup(row_now, col_now, pax_now):
         NODES_NEXT_LAYER += 1
         
 def solution(grid):
-    global VISITED, WIDTH, HEIGHT, GRID, NODES_NEXT_LAYER
+    global VISITED, WIDTH, HEIGHT, GRID, NODES_NEXT_LAYER, ROW_QUE, COL_QUE, PICKAXE_QUE
     GRID = grid
     WIDTH = len(GRID[0])
     HEIGHT = len(GRID)

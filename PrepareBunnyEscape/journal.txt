@@ -91,3 +91,8 @@ for efficiency let's use this as a base
 
 https://www.geeksforgeeks.org/breadth-first-traversal-bfs-on-a-2d-array/
 https://www.youtube.com/watch?v=KiCBXu4P-2Y
+
+google cannot use queue too it seems
+
+I think I need to use other algorithm that able to at least show the following, node jumps and wall_value
+only record path that have wall value 1, other than that skip
